@@ -19,7 +19,7 @@ class AlienWars:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
 
         # Setting the caption for the window
-        pygame.display.set_caption("🛸 Alien Wars🛸")
+        pygame.display.set_caption("🛸 Alien Wars 🛸")
 
     def run_game(self):
         """Method for the main game loop"""
@@ -37,6 +37,8 @@ class AlienWars:
                     sys.exit()
 
     def _update_screen(self):
+        self.screen.fill(self.settings.bg_color)
+
         pygame.display.flip()
 
 if __name__ == '__main__':
