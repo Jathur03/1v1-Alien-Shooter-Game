@@ -28,13 +28,17 @@ class AlienWars:
             self._update_screen()
 
     def _check_events(self):
-        """A method to respond the check for events"""
+        """A method to respond to events"""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_q:
-                    sys.exit()
+                self._check_keydown_events(event)
+
+    def _check_keydown_events(self, event):
+        """"A method to respond to keydown events"""
+        if event.key == pygame.K_q:
+            sys.exit()
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
