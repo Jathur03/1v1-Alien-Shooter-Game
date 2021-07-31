@@ -7,4 +7,4 @@ class Settings:
         self.screen_height = 750
 
         # Screen background color
-        self.bg_color = (30, 39, 46)
+        self.bg_color = (4, 19, 28)
