@@ -4,6 +4,7 @@ import sys
 
 # Importing the modules needed for the game
 from settings import Settings
+from blue_ship import BlueShip
 
 class AlienWars:
     """This is the main class for the alien war game"""
@@ -12,14 +13,18 @@ class AlienWars:
         # Initalizing pygame
         pygame.init()
 
-        # Storing the settings from settings.py in a variable
         self.settings = Settings()
 
         # Setting the window size
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
 
+        self.blue_ship = BlueShip(self)
+
         # Setting the caption for the window
         pygame.display.set_caption("🛸 Alien Wars 🛸")
+
+        # Setting the app icon for the game
+        pygame.display.set_icon(self.settings.app_icon)
 
     def run_game(self):
         """Method for the main game loop"""
@@ -42,6 +47,8 @@ class AlienWars:
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
+
+        self.blue_ship.blitme()
 
         pygame.display.flip()
 

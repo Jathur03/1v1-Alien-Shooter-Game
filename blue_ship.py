@@ -14,4 +14,8 @@ class BlueShip:
         self.blue_ship_rect = self.blue_ship_image.get_rect()
 
         # Making each ship to start in the left bottom part of the screen
-        self.blue_ship_rect = self.screen_rect.left_bottom
+        self.blue_ship_rect.bottomleft = self.screen_rect.bottomleft
+
+    def blitme(self):
+        """Draw the blue ship at its current location"""
+        self.screen.blit(self.blue_ship_image, self.blue_ship_rect)
