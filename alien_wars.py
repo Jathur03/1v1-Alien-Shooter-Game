@@ -4,7 +4,8 @@ import sys
 
 # Importing the modules needed for the game
 from settings import Settings
-from blue_ship import BlueShip
+from ships import Ships
+
 
 class AlienWars:
     """This is the main class for the alien war game"""
@@ -18,7 +19,8 @@ class AlienWars:
         # Setting the window size
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
 
-        self.blue_ship = BlueShip(self)
+
+        self.ships = Ships(self)
 
         # Setting the caption for the window
         pygame.display.set_caption("🛸 Alien Wars 🛸")
@@ -45,10 +47,16 @@ class AlienWars:
         if event.key == pygame.K_q:
             sys.exit()
 
+    
+
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
 
-        self.blue_ship.blitme()
+        # Making the border that divides both sides of the screen
+        BORDER = pygame.Rect(1200//2 - 5, 0, 10, 750)
+        pygame.draw.rect(self.screen, (255, 255, 255), BORDER)
+
+        self.ships.blitme()
 
         pygame.display.flip()
 
