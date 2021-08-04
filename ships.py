@@ -16,10 +16,19 @@ class Ships:
         self.red_ship_image = pygame.image.load('img/red.png')
         self.red_ship_rect = self.red_ship_image.get_rect()
 
-
         # Making each ship to start in the left bottom part of the screen
         self.blue_ship_rect.bottomleft = self.screen_rect.bottomleft
         self.red_ship_rect.bottomright = self.screen_rect.bottomright
+
+        # Moving flags
+        self.moving_left = False
+        self.moving_right = False
+        self.moving_up = False
+        self.moving_down = False
+
+    def update_ship(self):
+        """Change the ships position"""
+        
 
     def blitme(self):
         """Draw the blue ship at its current location"""

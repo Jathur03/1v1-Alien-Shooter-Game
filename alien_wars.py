@@ -19,7 +19,6 @@ class AlienWars:
         # Setting the window size
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
 
-
         self.ships = Ships(self)
 
         # Setting the caption for the window
@@ -46,8 +45,6 @@ class AlienWars:
         """"A method to respond to keydown events"""
         if event.key == pygame.K_q:
             sys.exit()
-
-    
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
