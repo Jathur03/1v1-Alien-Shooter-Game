@@ -13,3 +13,6 @@ class Settings:
 
         # Saving an image for the app icon
         self.app_icon = pygame.image.load('img/app-icon.png')
+
+        # Ships speed when moving around
+        self.ship_speed = 1.0

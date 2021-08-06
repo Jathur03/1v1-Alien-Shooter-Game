@@ -20,6 +20,12 @@ class Ships:
         self.blue_ship_rect.bottomleft = self.screen_rect.bottomleft
         self.red_ship_rect.bottomright = self.screen_rect.bottomright
 
+        # Store a deicmal value for the ship's horizontal position
+        self.x = float(self.rect.x)
+
+        # Store a deciaml value for the ship's verticle position
+        self.y = float(self.rect.y)
+
         # Moving flags
         self.moving_left = False
         self.moving_right = False
@@ -28,7 +34,17 @@ class Ships:
 
     def update_ship(self):
         """Change the ships position"""
-        
+        if self.moving_left:
+            self.x -= self.settings.ship_speed
+
+        if self.moving_right:
+            self.x += self.settings.ship_speed
+
+        if self.moving_up:
+            self.y -= self.settings.ship_speed
+
+        if self.moving_down:
+            self.x += self.settings.ship_speed
 
     def blitme(self):
         """Draw the blue ship at its current location"""
