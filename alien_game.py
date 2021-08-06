@@ -6,7 +6,6 @@ import sys
 from settings import Settings
 from ships import Ships
 
-
 class AlienWars:
     """This is the main class for the alien war game"""
     def __init__(self):
