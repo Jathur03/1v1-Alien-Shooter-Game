@@ -21,10 +21,10 @@ class Ships:
         self.red_ship_rect.bottomright = self.screen_rect.bottomright
 
         # Store a deicmal value for the ship's horizontal position
-        self.x = float(self.rect.x)
+        self.x = float(self.screen_rect.x)
 
         # Store a deciaml value for the ship's verticle position
-        self.y = float(self.rect.y)
+        self.y = float(self.screen_rect.y)
 
         # Moving flags
         self.moving_left = False
