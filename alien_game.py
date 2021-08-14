@@ -30,7 +30,6 @@ class AlienWars:
         """Method for the main game loop"""
         while True:
             self._check_events()
-            self.ships.update_ship()
             self._update_screen()
 
     def _check_events(self):
@@ -46,7 +45,7 @@ class AlienWars:
         if event.key == pygame.K_q:
             sys.exit()
         elif event.type == pygame.K_LEFT:
-            self.ship.moving_left = True
+            self.ship.blue_ship_rect.x -= 1
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
