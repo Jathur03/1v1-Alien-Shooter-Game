@@ -5,6 +5,7 @@ import sys
 # Importing the modules needed for the game
 from settings import Settings
 from ships import BShips
+from ships import RShips
 
 class AlienWars:
     """This is the main class for the alien war game"""
@@ -19,6 +20,7 @@ class AlienWars:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
 
         self.bships = BShips(self)
+        self.rships = RShips(self)
 
         # Setting the caption for the window
         pygame.display.set_caption("🛸 Alien Wars 🛸")
@@ -31,8 +33,9 @@ class AlienWars:
         while True:
             self._check_events()
             self.bships.update()
+            self.rships.update()
             self._update_screen()
-            print(self.bships.y)
+            print(self.rships.y)
             
     def _check_events(self):
         """A method to respond to events"""
@@ -48,14 +51,14 @@ class AlienWars:
         """"A method to respond to keydown events"""
         if event.key == pygame.K_q:
             sys.exit()
-        elif event.type == pygame.K_w:
-            self.ship.blue_moving_up = True
-        elif event.type == pygame.K_s:
-            self.ship.blue_moving_down = True
-        elif event.type == pygame.K_UP:
-            self.ship.red_moving_up = True
-        elif event.type == pygame.K_DOWN:
-            self.ship.red_moving_down = True
+        elif event.key == pygame.K_w:
+            self.bships.blue_moving_up = True
+        elif event.key == pygame.K_s:
+            self.bships.blue_moving_down = True
+        elif event.key == pygame.K_UP:
+            self.rships.red_moving_up = True
+        elif event.key == pygame.K_DOWN:
+            self.rships.red_moving_down = True
         # elif event.type == pygame.K_LSHIFT:
         #     self.blue_fire_bullet = True
         # elif event.type == pygame.K_RSHIFT:
@@ -63,14 +66,14 @@ class AlienWars:
 
     def _check_keyup_events(self, event):
         """"A method to respond to keydown events"""
-        if event.type == pygame.K_w:
-            self.ship.blue_moving_up = False
-        elif event.type == pygame.K_s:
-            self.ship.blue_moving_down = False
-        elif event.type == pygame.K_UP:
-            self.ship.red_moving_up = False
-        elif event.type == pygame.K_DOWN:
-            self.ship.red_moving_down = False
+        if event.key == pygame.K_w:
+            self.bships.blue_moving_up = False
+        elif event.key == pygame.K_s:
+            self.bships.blue_moving_down = False
+        elif event.key == pygame.K_UP:
+            self.rships.red_moving_up = False
+        elif event.key == pygame.K_DOWN:
+            self.rships.red_moving_down = False
 
 
 
@@ -108,6 +111,7 @@ class AlienWars:
         pygame.draw.rect(self.screen, (255, 255, 255), BORDER)
 
         self.bships.blitme()
+        self.rships.blitme()
 
         pygame.display.flip()
 
