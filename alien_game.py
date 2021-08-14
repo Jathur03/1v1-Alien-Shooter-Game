@@ -31,7 +31,8 @@ class AlienWars:
         while True:
             self._check_events()
             self._update_screen()
-
+            print(self.bships.y)
+            
     def _check_events(self):
         """A method to respond to events"""
         for event in pygame.event.get():
