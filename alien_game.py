@@ -35,7 +35,7 @@ class AlienWars:
             self.bships.update()
             self.rships.update()
             self._update_screen()
-            print(self.rships.y)
+            # print(self.rships.y)
             
     def _check_events(self):
         """A method to respond to events"""
@@ -59,10 +59,6 @@ class AlienWars:
             self.rships.red_moving_up = True
         elif event.key == pygame.K_DOWN:
             self.rships.red_moving_down = True
-        # elif event.type == pygame.K_LSHIFT:
-        #     self.blue_fire_bullet = True
-        # elif event.type == pygame.K_RSHIFT:
-        #     self.red_fire_bullet = True
 
     def _check_keyup_events(self, event):
         """"A method to respond to keydown events"""
@@ -74,33 +70,6 @@ class AlienWars:
             self.rships.red_moving_up = False
         elif event.key == pygame.K_DOWN:
             self.rships.red_moving_down = False
-
-
-
-#             VEL = 5
-
-# def yellow_handle_movement(keys_pressed, yellow):
-#     if keys_pressed[pygame.K_a] and yellow.x - VEL > 0:  # LEFT
-#         yellow.x -= VEL
-#     if keys_pressed[pygame.K_d] and yellow.x + VEL + yellow.width < BORDER.x:  # RIGHT
-#         yellow.x += VEL
-#     if keys_pressed[pygame.K_w] and yellow.y - VEL > 0:  # UP
-#         yellow.y -= VEL
-#     if keys_pressed[pygame.K_s] and yellow.y + VEL + yellow.height < settings.screen_height - 15:  # DOWN
-#         yellow.y += VEL
-
-
-# def red_handle_movement(keys_pressed, red):
-#     if keys_pressed[pygame.K_LEFT] and red.x - VEL > BORDER.x + BORDER.width:  # LEFT
-#         red.x -= VEL
-#     if keys_pressed[pygame.K_RIGHT] and red.x + VEL + red.width < settings.screen_width:  # RIGHT
-#         red.x += VEL
-#     if keys_pressed[pygame.K_UP] and red.y - VEL > 0:  # UP
-#         red.y -= VEL
-#     if keys_pressed[pygame.K_DOWN] and red.y + VEL + red.height < settings.screen_height - 15:  # DOWN
-#         red.y += VEL
-
-
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
