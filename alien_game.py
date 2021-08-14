@@ -32,6 +32,7 @@ class AlienWars:
             self._check_events()
             self.bships.update()
             self._update_screen()
+            print(self.bships.y)
             
 
     def _check_events(self):
@@ -41,6 +42,8 @@ class AlienWars:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
+            elif event.type == pygame.KEYUP:
+                self._check_keyup_events(event)
 
     def _check_keydown_events(self, event):
         """"A method to respond to keydown events"""
@@ -58,6 +61,17 @@ class AlienWars:
         #     self.blue_fire_bullet = True
         # elif event.type == pygame.K_RSHIFT:
         #     self.red_fire_bullet = True
+
+    def _check_keyup_events(self, event):
+        """"A method to respond to keydown events"""
+        if event.type == pygame.K_w:
+            self.ship.blue_moving_up = False
+        elif event.type == pygame.K_s:
+            self.ship.blue_moving_down = False
+        elif event.type == pygame.K_UP:
+            self.ship.red_moving_up = False
+        elif event.type == pygame.K_DOWN:
+            self.ship.red_moving_down = False
 
 
 
