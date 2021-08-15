@@ -11,7 +11,6 @@ class BShips(Sprite):
         self.screen_rect = game.screen.get_rect()
         self.settings = game.settings
 
-
         # Saving the ships' image to a variable and getting its rect
         self.image = pygame.image.load('img/blue.png')
         self.rect = self.image.get_rect()

@@ -14,6 +14,13 @@ class Settings:
         # Screen background color
         self.bg_color = (4, 19, 28)
 
+        # Bullet settings
+        self.bullet_speed = 1.0
+        self.bullet_width = 15
+        self.bullet_height = 3
+        self.blue_bullet_color = ('#2980b9')
+        self.red_bullet_color = ('#e74c3c')
+
         # Saving an image for the app icon
         self.app_icon = pygame.image.load('img/app-icon.png')
 
