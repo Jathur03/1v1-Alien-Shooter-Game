@@ -38,6 +38,13 @@ class AlienWars:
             self.bships.update()
             self.rships.update()
             self.bbullets.update()
+
+            for bullet in self.bbullets.copy():
+                if bullet.rect.left < 1200:
+                    self.bbullets.remove(bullet)
+
+            print(len(self.bbullets))
+
             self._update_screen()
             # print(self.rships.y)
             
@@ -63,6 +70,8 @@ class AlienWars:
             self.rships.red_moving_up = True
         elif event.key == pygame.K_DOWN:
             self.rships.red_moving_down = True
+        elif event.key == pygame.K_SPACE:
+            self._fire_bbullet()
 
     def _check_keyup_events(self, event):
         """"A method to respond to keydown events"""
@@ -75,6 +84,10 @@ class AlienWars:
         elif event.key == pygame.K_DOWN:
             self.rships.red_moving_down = False
 
+    def _fire_bbullet(self):
+        new_bbullet = BBullet(self)
+        self.bbullets.add(new_bbullet)
+
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
 
@@ -85,6 +98,9 @@ class AlienWars:
 
         self.bships.blitme()
         self.rships.blitme()
+
+        for bullet in self.bbullets.sprites():
+            bullet.draw_bullet()
 
         pygame.display.flip()
 
