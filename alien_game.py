@@ -6,6 +6,7 @@ import sys
 from settings import Settings
 from ships import BShips
 from ships import RShips
+from bullet import BBullet
 
 class AlienWars:
     """This is the main class for the alien war game"""
@@ -22,6 +23,8 @@ class AlienWars:
         self.bships = BShips(self)
         self.rships = RShips(self)
 
+        self.bbullets = pygame.sprite.Group()
+
         # Setting the caption for the window
         pygame.display.set_caption("🛸 Alien Wars 🛸")
 
@@ -34,6 +37,7 @@ class AlienWars:
             self._check_events()
             self.bships.update()
             self.rships.update()
+            self.bbullets.update()
             self._update_screen()
             # print(self.rships.y)
             
