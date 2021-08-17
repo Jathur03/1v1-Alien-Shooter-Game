@@ -19,7 +19,7 @@ class BBullet(Sprite):
 
     def update(self):
         """Move the bullet to the other side of the window"""
-        self.x += 1
+        self.x += self.settings.bullet_speed
         self.rect.x = self.x
 
     def draw_bullet(self):
