@@ -114,7 +114,6 @@ class AlienWars:
             self.settings.red_lives -= 1
             self.bbullets.empty()
 
-
     def _check_rbullet_bship_collisions(self):
         """Respond to rbullet-bship collisions."""
         collision = pygame.sprite.spritecollideany(self.bships, self.rbullets)
@@ -123,7 +122,6 @@ class AlienWars:
             # print("Red Wins!")
             self.settings.blue_lives -= 1
             self.rbullets.empty()
-
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
@@ -145,6 +143,7 @@ class AlienWars:
 
         blue_health_text = self.settings.health_font.render("Health: " + str(self.settings.blue_lives), True, 1, (255,255,255))
         red_health_text = self.settings.health_font.render("Health: " + str(self.settings.red_lives), True, 1, (255,255,255))
+
         self.screen.blit(red_health_text, (self.settings.screen_width - red_health_text.get_width() - 10, 10))
         self.screen.blit(blue_health_text, (10, 10))
 
