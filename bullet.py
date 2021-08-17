@@ -11,11 +11,11 @@ class BBullet(Sprite):
         self.color = game.settings.blue_bullet_color
 
         # Creating the bullet's rectangle at 0, 0 then moving it to the ship
-        self.rect = pygame.Rect(0, 0, self.settings.bullet_height, self.settings.bullet_width)
+        self.rect = pygame.Rect(0, 0, self.settings.bullet_width, self.settings.bullet_height)
         self.rect.midtop = game.bships.rect.midtop
 
         # Storing the blue bullets x position as a decimal value
-        self.x = float(self.rect.y)
+        self.x = float(self.rect.x)
 
     def update(self):
         """Move the bullet to the other side of the window"""

@@ -39,9 +39,9 @@ class AlienWars:
             self.rships.update()
             self.bbullets.update()
 
-            for bullet in self.bbullets.copy():
-                if bullet.rect.left < 1200:
-                    self.bbullets.remove(bullet)
+            # for bullet in self.bbullets.copy():
+            #     if bullet.rect.left < 1200:
+            #         self.bbullets.remove(bullet)
 
             print(len(self.bbullets))
 
