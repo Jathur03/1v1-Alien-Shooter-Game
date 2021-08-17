@@ -50,7 +50,6 @@ class AlienWars:
 
             # self.print_text()
 
-
     def _check_events(self):
         """A method to respond to events"""
         for event in pygame.event.get():
@@ -133,7 +132,6 @@ class AlienWars:
 
         self.bships.blitme()
         self.rships.blitme()
-
 
         for bullet in self.bbullets.sprites():
             bullet.draw_bullet()
