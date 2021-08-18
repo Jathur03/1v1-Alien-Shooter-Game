@@ -42,12 +42,10 @@ class AlienWars:
             self.bships.update()
             self.rships.update()
             self._update_bullets()
+            self._update_screen()
 
             # print(len(self.bbullets))
-
-            self._update_screen()
             # print(self.rships.y)
-
             # self.print_text()
 
     def _check_events(self):
