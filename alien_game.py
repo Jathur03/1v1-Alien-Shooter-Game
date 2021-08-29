@@ -29,6 +29,9 @@ class AlienWars:
         self.bbullets = pygame.sprite.Group()
         self.rbullets = pygame.sprite.Group()
 
+        # Sounds
+        self.bullet_sound = pygame.mixer.Sound('sounds/bullet.mp3')
+
         # Setting the caption for the window
         pygame.display.set_caption("🛸 Alien Wars 🛸")
 
@@ -72,8 +75,10 @@ class AlienWars:
             self.rships.red_moving_down = True
         elif event.key == pygame.K_LSHIFT:
             self._fire_bbullet()
+            self.bullet_sound.play()
         elif event.key == pygame.K_RSHIFT:
             self._fire_rbullet()
+            self.bullet_sound.play()
 
     def _check_keyup_events(self, event):
         """"A method to respond to keydown events"""
